@@ -1,9 +1,10 @@
 <?php
-class main
+class Main extends Controller
 {
     function __construct()
     {
-        echo "<p>main</p>";
+        parent::__construct();
+        $this->view->render('main/index');
     }
     function saludo()
     {

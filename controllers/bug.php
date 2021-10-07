@@ -1,9 +1,11 @@
 <?php
-class Bug
+class Bug extends Controller
 {
     function __construct()
     {
-        echo "El recurso no existe!!";
+        parent::__construct();
+        $this->view->message = "Ah ocurrido un error fatal";
+        $this->view->render('bug/index');
     }
 }
 ?>
