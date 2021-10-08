@@ -7,6 +7,12 @@
     <title>Contacto</title>
 </head>
 <body>
-    <h2>Puede comunicarse con nosotros por estos medios</h2>
+    <?php require "./views/header.php";?>
+    <div id="name">
+        <div id="main">
+            <h1> Puede comunicarse por estos medios</h1>
+        </div>
+    </div>
+    <?php require "./views/footer.php";?>
 </body>
 </html>

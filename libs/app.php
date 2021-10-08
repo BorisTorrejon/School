@@ -3,7 +3,7 @@ require_once './controllers/bug.php';
 class App{
     function __construct()
     {
-        $url = $_GET['url'];
+        $url = isset($_GET['url'])?$_GET['url']:'main';
         //remove unnecessary slashes
         $url = rtrim($url,'/');
         //create an array of the elements separated by a slash

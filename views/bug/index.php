@@ -7,6 +7,10 @@
     <title>Error</title>
 </head>
 <body>
-    <h1 style="color:red"><?php echo $this->message?></h1>
+    <?php require "./views/header.php";?>
+    <div id="main">
+    <h1 class="center bug"><?php echo $this->message?></h1>
+    </div>
+    <?php require "./views/footer.php";?>
 </body>
 </html>

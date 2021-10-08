@@ -7,6 +7,10 @@
     <title>Inicio</title>
 </head>
 <body>
-    <h1>esta es la vista main</h1>
+    <?php require "./views/header.php";?>
+    <div id="main">
+        <h1 class="center"> Esto es el Main</h1>
+    </div>
+    <?php require "./views/footer.php";?>
 </body>
 </html>
