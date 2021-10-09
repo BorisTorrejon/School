@@ -13,6 +13,7 @@ class App{
         {
             require_once $fileController;
             $controller = new $url[0];
+            $controller->loadModel($url[0]);
             //if $url[1] is declared, invoke the function
             if(isset($url[1]))
             {
