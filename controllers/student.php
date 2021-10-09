@@ -7,8 +7,14 @@ class Student extends Controller
         $this->view->render('student/index');
     }
     public function registerStudent(){
-        echo "has creado un nuevo alumno";
-        $this->model->insert();
+        $matricula  = $_POST['matricula'];
+        $name       = $_POST['name'];
+        $surname    = $_POST['surname'];
+        $this->model->insert([
+            'matricula' => $matricula,
+            'name'      => $name,
+            'surname'   => $surname
+        ]);
     }
 }
 ?>
