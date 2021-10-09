@@ -10,6 +10,7 @@
     <?php require "./views/header.php";?>
     <div id="main">
         <h1 class="center"> Nuevo Alumno</h1>
+        <div class="center"><?php echo $this->mensaje;?></div>
         <form action="<?php echo constant('URL'); ?>student/registerStudent" method="POST">
             <label for="matricula">Matricula</label>
             <input type="text" name="matricula" required><br>

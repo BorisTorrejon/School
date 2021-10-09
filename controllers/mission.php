@@ -4,7 +4,10 @@ class Mission extends Controller
     function __construct()
     {
         parent::__construct();
-        $this->view->render('mission/index');
+    }
+    function render()
+    {
+        $this->view->render('./mission/index');
     }
 }
 ?>
