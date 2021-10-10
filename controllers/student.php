@@ -8,6 +8,10 @@ class Student extends Controller
     }
     function render()
     {
+        //upload students
+        $students =$this->model->get();
+        // send students to view
+        $this->view->students = $students;
         $this->view->render('./student/index');
     }
     public function registerStudent(){
@@ -28,6 +32,10 @@ class Student extends Controller
             $mensaje= "La Matricula ya Existe.";
         };
         $this->view->mensaje=$mensaje;
+        //upload students
+        $students =$this->model->get();
+        // send students to view
+        $this->view->students = $students;
         $this->render();
     }
 }

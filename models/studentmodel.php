@@ -1,4 +1,5 @@
 <?php
+include_once './models/student.php';
 class StudentModel extends Model{
     public function __construct()
     {
@@ -27,5 +28,28 @@ class StudentModel extends Model{
             return false;
         };
     }
+    public function get()
+    {
+        $students=[];
+        try
+        {
+            $query = $this->db->connect()->query(
+                'SELECT * FROM STUDENTS;'
+            );
+            while($row = $query->fetch()){
+                //create object student
+                $student = new StudentM();
+                $student->matricula = $row['stu_id'];
+                $student->name = $row['stu_name'];
+                $student->surname = $row['stu_surname'];
+                array_push($students,$student);
+            }
+            return $students;
+        }catch(PDOException $e)
+        {
+            return [];
+        };
+    }
+
 }
 ?>

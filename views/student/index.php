@@ -20,6 +20,37 @@
             <input type="text" name="surname" required><br>
             <input type="submit" value="Registrar Alumno">
         </form>
+        <!--if student is not empty create table -->
+        <?php if(!empty($this->students)){
+        ?>
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($this->students as $row)
+                    {
+                        $student = new StudentM();
+                        $student = $row;
+                ?>
+                <tr>
+                    <td><?php echo $student->matricula?></td>
+                    <td><?php echo $student->name?></td>
+                    <td><?php echo $student->surname?></td>
+                    <td><a href="#">editar</a></td>
+                    <td><a href="#">eliminar</a></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+        <?php };?>
     </div>
     <?php require "./views/footer.php";?>
 </body>
